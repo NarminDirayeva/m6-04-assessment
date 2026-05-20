@@ -11,13 +11,16 @@ with confidence scores.
 - 3,327 images with YOLO-format annotations (single class: cat)
 - Split: 70% train / 15% val / 15% test
 - Dataset stored on Google Drive (not committed to repo)
+## Environment
+- Training was done on **Google Colab** with a free **T4 GPU**
+- Dataset was accessed via **Google Drive** (mounted with `drive.mount('/content/drive')`)
+- Colab reduced training time to ~2 hours
 
 ## Model
 - Architecture: YOLO26n (2.4M parameters)
 - Pretrained on COCO, fine-tuned on cat detection dataset
 - Training: 30 epochs, imgsz=640, batch=16, Colab T4 GPU
 - Best checkpoint: `runs/cats_v1-5/weights/best.pt`
-
 ## Results
 | Metric | Value |
 |---|---|
@@ -30,9 +33,10 @@ with confidence scores.
 1. Clone the repo
 2. Install dependencies:
 ```bash
-pip install ultralytics torch torchvision matplotlib pandas pillow
+pip install ultralytics 
 ```
-3. Download the dataset from Google Drive and place it at `data/DATA_CLEAN/`
+3. Download the dataset from Google Drive and place it at `
+DATA_CLEAN/`
 4. Open `m6-04-assessment.ipynb` and run all cells
 
 ## Repository Structure
